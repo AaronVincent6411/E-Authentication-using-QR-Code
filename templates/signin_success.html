@@ -2,12 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <video autoplay muted loop>
+        <source src="static/assets/bg video.mp4" type="video/mp4">
+    </video>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In Success</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signin_success.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Balthazar&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+    </style>
 </head>
-<body>
+<!-- <body>
     <h1>Welcome, {{ user_email }}!</h1>
     <p>You have successfully signed in.</p>
+</body>
+</html> -->
+<body>
+    <h1>Art Of Hiding</h1>
+    <div style="display: flex; justify-content: space-evenly; margin-top: 50px; width: 100vw;">
+        <!-- Rectangle for hiding message -->
+        <div class="hide">
+            <h2>Hide Message</h2>
+            <form action="/hide" method="post" enctype="multipart/form-data">
+                <label for="audio_file">Upload an audio file (.wav):</label>
+                <input type="file" name="audio_file" accept=".wav" required>
+                <br>
+                <label for="secret_message">Enter the secret message:</label>
+                <input type="text" name="secret_message" required>
+                <br>
+                <button type="submit">Hide Message</button>
+            </form>
+        </div>
+         
+        <!-- Rectangle for extracting message -->
+        <div class="extract">
+            <h2>Extract Message</h2>
+            <label for="audio_file">Upload an audio file (.wav):</label>
+            <input type="file" id="extract_audio_file" accept=".wav" required>
+            <br>
+            <label for="extracted_message">Extracted Message:</label>
+            <input type="text" id="extracted_message" readonly>
+            <br>
+            <button type="button" onclick="extractMessage()">Extract Message</button>
+        </div>
+    </div>
+
+    <script>
+        function extractMessage() {
+            var audioFile = document.getElementById('extract_audio_file').files[0];
+            var formData = new FormData();
+            formData.append('audio_file', audioFile);
+    
+            fetch('/extract', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === " ") {
+                    alert("No hidden message found");
+                } else {
+                    document.getElementById('extracted_message').value = data;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+    <a href="/">Sign Out</a>
 </body>
 </html>
