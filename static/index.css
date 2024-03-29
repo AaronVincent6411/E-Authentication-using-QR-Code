@@ -2,17 +2,29 @@ body {
     font-family: Arial, sans-serif;
     padding: 0;
     overflow: hidden;
-    background-image: url('/static/assets/bg image.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0;
     height: 100vh;
-    /* justify-content:center; */
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 10rem;
     align-items: center;
+}
+
+video {
+    position: absolute;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1; 
+    object-fit: cover;
+    filter: blur(8px);
+    transform: scale(1.1)
+}
+
+video::-webkit-media-controls {
+    display:none;
+}
+video::-webkit-media-controls-start-playback-button {
+    display:none;
 }
 
 h1 {
@@ -21,36 +33,25 @@ h1 {
     margin-top: 30px;
     color: white;
     font-size: 52px;
-    text-case: uppercase;
-    font-family: "Libre Baskerville", serif;
-    
-}
-
-.opts {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: end;
-    height: 300px;
+    text-transform: uppercase;
+    font-family: "Balthazar", serif;
+    letter-spacing: 2px;
+    font-style: normal;
 }
 
 .options {
-    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
-    /* height: 200px; */
-    padding: 15px;
-    flex-direction: row;
-    border-radius: 10px;
-    /* justify-content: center; */
-    gap: 10rem;
-    justify-content: center;
-    align-items: center;
-    right: 10%;
-    position: relative;
+    width: 50vw;
+    justify-content: space-between;
 }
 
 a {
-    font-size: 24px;
+    font-size: 32px;
+    font-family: "Lora", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #00a9bf;
 }
 
 @media screen and (max-width: 768px) {
