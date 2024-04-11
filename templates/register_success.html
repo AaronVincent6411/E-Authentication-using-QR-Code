@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register_success.css') }}">
+</head>
+<body>
+    <h1>Registration Successful!</h1>
+    <p>Scan the QR code below with Google Authenticator to set up two-factor authentication:</p>
+    <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="QR Code">
+    <a href="/">Home Page</a>
+</body>
+</html>
