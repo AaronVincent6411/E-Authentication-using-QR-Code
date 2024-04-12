@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('/static/assets/bg image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    color: white;
+    font-size: 42px;
+}
+
+p {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    font-weight: 400;
+    font-size: 26px;
+    color: white;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 15%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: white; 
+    background-color: black; 
+    padding: 0.5rem 1rem;
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom:5rem;
+}
+
+a:hover {
+    background-color: grey;
+}

@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('/static/assets/bg image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    /* justify-content:center; */
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    color: white;
+    font-size: 52px;
+    text-case: uppercase;
+    font-family: "Libre Baskerville", serif;
+    
+}
+
+.opts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: end;
+    height: 300px;
+}
+
+.options {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    /* height: 200px; */
+    padding: 15px;
+    flex-direction: row;
+    border-radius: 10px;
+    /* justify-content: center; */
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+    right: 10%;
+    position: relative;
+}
+
+a {
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .options {
+        gap: 3rem;
+    }
+    
+    h1 {
+        font-size: 42px;
+    }
+}
